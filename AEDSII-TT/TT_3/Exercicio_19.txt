@@ -1,0 +1,8 @@
+Exercicio(11) :Calcule o número de multiplicações que o código abaixo realiza:
+
+for (int i = n - 7; i >= 1; i--)
+for (int j = 0; j < n; j++)
+a *= 2;
+
+Resposta: para n <= 7 : 0 multiplicações
+          para n > 7  : (n - 7) * n multiplicações

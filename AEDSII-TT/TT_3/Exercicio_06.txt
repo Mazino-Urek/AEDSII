@@ -1,0 +1,4 @@
+Exercício Resolvido (2): Calcule o número de adições que o código abaixo realiza:
+
+Resposta: melhor caso : 3
+          pior caso   : 5

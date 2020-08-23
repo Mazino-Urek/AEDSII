@@ -1,0 +1,35 @@
+questão 3 : Faça o quadro de memória do programa abaixo
+
+class Ponteiro05PassagemObjeto {
+public static Cliente setar2(Cliente y){
+y.setCodigo(6); y.setNome(“ff”);
+return y;
+}
+public static void setar1(Cliente x){
+x.setCodigo(4); x.setNome(“dd”); x = new Cliente (5, “ee”);
+}
+public static void main (String[] args){
+Cliente c1 = new Cliente(1, “aa”), c2 = null; c3 = new Cliente(2, “bb”);
+c2 = c1;
+setar1(c1);
+c3 = setar2(c2);
+}
+}
+
+
+resposta: 
+c1 : 01h
+c2 : null
+c3 : 02h
+c2 : 01h
+x  : 03h
+x  : 04h
+y  : 05h
+c3 : 05h
+
+
+
+
+
+
+

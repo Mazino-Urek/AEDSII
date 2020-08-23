@@ -1,0 +1,3 @@
+Questão 8: Qual das duas versões é mais fácil de entender?
+
+Resposta: A versão da direita, pois a correta identação e o uso de charves para delimitar os blocos tornam a leitura do código mais facil.

@@ -1,0 +1,33 @@
+questão 1 : Mostre a saída na tela
+
+double a; p = NULL;
+double *p, *q; p = (double*) malloc(sizeof(double));
+a = 3.14; *p = 20;
+printf(“%f\n”, a); q = p;
+p = &a; printf(“%f\n”, *p);
+*p = 2.718; printf(“%f\n”, a);
+printf(“%f\n”, a); free(p);
+a = 5; printf(“%f\n”, *q);
+printf(“%f\n”, *p);
+
+
+
+
+resposta : 
+
+3.140000
+3.140000
+
+
+
+
+
+
+
+
+
+
+
+
+
+

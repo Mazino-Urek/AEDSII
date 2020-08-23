@@ -1,0 +1,9 @@
+Exercicio(8): Calcule o número de subtrações que o código abaixo realiza:
+
+for (int i = 0; i < n; i++){
+for (int j = 0; j < n; j++){
+a--;
+}
+}
+
+resposta: n² subtrações

@@ -1,0 +1,5 @@
+Questão 12: Por que o código abaixo imprime [46 - 11]?
+
+Resposta: Pois ao utilizar o operador '<<' e '>>' core o deslocamento de bits, ou seja 23 em binario é
+igual a 00010111 ao delocar 1 bit para esquerda fica 00101110 que é igual a 46 em decimal , já ao 
+deslocar um bit para a direita fica 00001011 que em decimal é igual a 11.

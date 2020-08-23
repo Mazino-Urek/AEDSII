@@ -1,0 +1,3 @@
+Questão 6: O que o código abaixo faz?
+
+Resposta: O código verifica se o char passado por parametro é uma vogal. Retorna 'true' caso seja uma vogal e 'false' caso contrario. 

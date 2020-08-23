@@ -1,0 +1,7 @@
+Questão 01: Identifique as chamadas recursivas e condições de parada
+
+Resposta: na primeira função a chamada recursiva esta no else (linha 6) e a condição de parada
+é quando n for igual a 1.
+
+na segunda função a chamada recursiva esta no else (linha 6) e a condição de parada é quando 
+n for igual a '0' ou '1'

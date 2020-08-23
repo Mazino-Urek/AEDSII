@@ -1,0 +1,5 @@
+exercicio (19) : Qual é a diferença entre as notações O, Ω e Θ?
+
+resposta: O  representa o limite superior. 
+	  Θ  significa limite apertado. 
+ 	  Ω  representa o limite inferior.

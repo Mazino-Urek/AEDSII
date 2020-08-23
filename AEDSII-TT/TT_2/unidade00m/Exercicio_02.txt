@@ -1,0 +1,53 @@
+questão : Mostre o quadro de memória
+
+
+int a[10], *b;
+b = a;
+b[5] = 100;
+printf(“\n%d -- %d”, a[5], b[5]);
+b = (int*) malloc(10*sizeof(int));
+b[7] = 100;
+printf(“\n%d -- %d”, a[7], b[7]);
+
+
+resposta:
+
+a : 01h
+b : 11h
+b : 01h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

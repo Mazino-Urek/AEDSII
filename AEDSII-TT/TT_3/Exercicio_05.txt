@@ -1,0 +1,3 @@
+Exercício Resolvido (1): Calcule o número de subtrações que o código abaixo realiza:
+
+resposta: três subtrações

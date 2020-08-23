@@ -1,0 +1,5 @@
+Questâo 2: Por que o código abaixo imprime 2, 1, 0, 0, 1 e 2?
+
+Resposta: a função é inicada com i = 2, que e subitraído de um em um da chamda recursiva enquanto 
+i > 0, portanto ocoreará a impresão 2 , 1 , 0 e quando a função reursiva volta se fechando a uma segunda 
+impressão que se mostra um espelho da primeira ou seja imprimindo 0 , 1 , 2.

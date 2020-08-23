@@ -1,0 +1,8 @@
+Exercicio(5): Calcule o número de subtrações que o código abaixo realiza:
+
+int i = 10;
+while (i >= 7){
+i--;
+}
+
+Resposta: 3 subtrações

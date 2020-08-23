@@ -1,0 +1,19 @@
+//Questão 7: Um aluno desenvolveu o código abaixo, corrija-o:
+
+//Resposta:
+
+boolean isConsoante(String s, int n){
+    boolean resp= false;
+
+    if (n >= 0 && n < n.length()){
+        if (isLetra(s.charAt(n))){
+            if (!isVogal(s.charAt(n))){
+                resp= true;
+            } 
+            else{
+                resp=isConsoante(s, n + 1);
+            }
+        } 
+    }
+    return resp;
+}

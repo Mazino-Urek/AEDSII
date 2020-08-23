@@ -1,0 +1,6 @@
+exercicio (13) : Calcule o número de multiplicações que o código abaixo realiza:
+
+for (int i = n+4; i > 0; i >>= 1)
+a *= 2;
+
+resposta: ⌊ lg(n +4) ⌋ + 1 multiplicações

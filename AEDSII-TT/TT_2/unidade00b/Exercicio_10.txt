@@ -1,0 +1,5 @@
+Questão 10: Qual é a diferença entre os dois métodos abaixo?
+
+Resposta: No Primeiro metodo o incremento '--' só será aplicado na próxima linha, ou seja ele
+ retornará o valor de 'i'. No segundo o incremento '--' é feito na mesma linha, ou seja 
+ retornará 'i - 1'.

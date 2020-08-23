@@ -1,0 +1,14 @@
+exercico(2) : Resolva as equações abaixo:
+
+A) 11
+B) 10
+C) 9
+D) 8
+E) 7
+F) 6
+G) 5
+H) 4
+I) 3
+J) 2
+K) 1
+L) 0

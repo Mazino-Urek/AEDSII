@@ -1,0 +1,18 @@
+exercicio resolvido (11) : Encontre o menor valor em um array de inteiros
+
+int min = array[0];
+for (int i = 1; i < n; i++){
+if (min > array[i]){
+min = array[i];
+}
+}
+
+1o) Qual é a operação relevante?
+resposta: é a operação de comparação presente no if da terceira linha
+
+
+2o) Quantas vezes ela será executada?
+resposta: (n - 1) vezes
+
+
+
