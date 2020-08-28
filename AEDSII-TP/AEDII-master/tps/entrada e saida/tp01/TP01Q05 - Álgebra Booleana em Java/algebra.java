@@ -4,6 +4,7 @@
  *
  * */
 
+
 class Boleano {
 
 	private int quantidade;
@@ -55,65 +56,93 @@ class Boleano {
 	}
 
 	/*
-	 * interpreta e realiza as operações da String bool
+	 * realiza a operação not (!)
+	 * @return bolean resp - resposta da operação
+	 * */
+	boolean not () {
+		
+		boolean resp;	
+		
+		cabecote += 4;
+		resp =  ! interpretador();
+		cabecote++;
+
+		return resp;
+
+	
+	}//end not
+
+	/*
+	 * realiza a operação and (&&)
+	 * @return bolean resp - resposta da operação
+	 * */
+	boolean and () {
+	
+		boolean aux , resp;
+		cabecote += 4;
+		resp = interpretador();
+		cabecote++;
+		while(this.bool.charAt(cabecote) == ','){
+			cabecote++;
+			aux = interpretador();
+			resp = resp && aux;
+			cabecote++;
+		}//end while
+
+		return resp;
+	}//end and
+
+	/*
+	 * realiza a operação or (||)
 	 * @return boolean resp - resposta da operação
 	 * */
-	boolean interpretador () {
+	boolean or () {
+	
+		boolean aux , resp;
+		cabecote += 3;
+		resp = interpretador();
+		cabecote++;
+		while(this.bool.charAt(cabecote) == ','){
 
+			cabecote++;
+			aux = interpretador();
+			resp = resp || aux;
+			cabecote++;
+		}//end while
+
+		return resp;
+	}//end or
+
+	/*
+	 * interpreta uma espreção boolean presente na string bool
+	 * @return boolean resp - resposta da operação boolean 
+	 * */
+	boolean interpretador (){
+	
 		boolean resp = true;
 		char a = this.bool.charAt(cabecote);
 
 		if(a == 'A')
-			resp =  valor[0] == 1;
+                          resp =  valor[0] == 1;
+ 
+                else if(a == 'B')
+                          resp = valor[1] == 1;
+ 
+                else if(a == 'C')
+                          resp = valor[2] == 1;
 
-		else if(a == 'B')
-			resp = valor[1] == 1;
-
-		else if(a == 'C')
-			resp = valor[2] == 1;
-		
-		//operação not
 		else if(a == 'n')
-		{
-			cabecote += 4;
-			resp =  ! interpretador();
-			cabecote++;
-		}//end if
+			resp = not();
 
-		//operação and
 		else if(a == 'a')
-		{
-			boolean aux;
-			cabecote += 4;
-			resp = interpretador();
-			cabecote++;
-			while(this.bool.charAt(cabecote) == ','){
-				cabecote++;
-				aux = interpretador();
-				resp = resp && aux;
-				cabecote++;
-			}//end while
-		}//end if
+			resp = and();
 
-		//opreração or
 		else if(a == 'o')
-		{
-			boolean aux;
-			cabecote += 3;
-			resp = interpretador();
-			cabecote++;
-			while(this.bool.charAt(cabecote) == ','){
-				
-				cabecote++;
-				aux = interpretador();
-				resp = resp || aux;
-				cabecote++;
-			}//end while		
-		}//end if
+			resp = or();
 
-		return resp;	
-	}
-}
+		return resp;
+	}//end interpretador
+}//end boleano
 
 
 public class algebra {
@@ -121,22 +150,22 @@ public class algebra {
 	public static void main(String[] args){
 
 		int x = MyIO.readInt();
-		Boleano novo = new Boleano();	
+		Boleano novo = new Boleano();
 
 		while(x != 0){
-			
+
 			novo.redefinir(x);
 
 			if(novo.interpretador()){
-			
+
 				MyIO.println("1");
 			}
 			else{
-			
+
 				MyIO.println("0");
 			}
-		
-			x = MyIO.readInt();	
+
+			x = MyIO.readInt();
 		}
 	}
 }
