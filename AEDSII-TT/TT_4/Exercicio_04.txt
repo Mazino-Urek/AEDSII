@@ -1,0 +1,25 @@
+exercicio 02 : Execute a versão abaixo do Seleção para arrays gerados aleatoriamente. Em seguida, discuta sobre os números de comparações inseridas e movimentações evitadas pela nova versão do algoritmo
+
+
+for (int i = 0; i < (n - 1); i++) {
+	int menor = i;
+	for (int j = (i + 1); j < n; j++){
+		if (array[menor] > array[j]){
+			menor = j;
+		}
+	}
+	if (menor != i){
+		swap(menor, i);
+	}
+}
+
+
+
+resposta : 
+
+A primeira vista o acresimo do 'if(menor != i)' melhora a eficiência do algoritimo, uma vez que evita
+movimentações desnecessarias no array. Porém, este if sera executado todas as vezes apanas para evitar
+uma situação específica que além de não afetar a precisão do programa é relativamente rara.
+Portanto concluo que o acrécimo do 'if' torna-se um custo maior do que seus benefícios, salvo situações
+especificas como por exemplo um arranjo que sabe-se que ja esteja semi ordenado(1 2 3 5 4).
+

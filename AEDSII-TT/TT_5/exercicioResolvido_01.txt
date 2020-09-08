@@ -1,0 +1,15 @@
+exercicio resolvido : Mostre o somatório dos n primeiros números inteiros:
+
+Resposta: 
+  
+  S (1 <= i <= n): i
+
+
+//Nota : o 'S' é utilizado substituto para o simbolo do somatório (sigma).
+
+
+
+
+
+
+
