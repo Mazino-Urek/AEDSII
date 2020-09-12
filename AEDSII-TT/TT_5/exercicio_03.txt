@@ -1,0 +1,49 @@
+Exercício (3): Um algoritmo de ordenação tradicional é o Inserção. Faça a análise de
+complexidade desse algoritmo para os números de comparações e
+movimentações entre registros no pior e melhor caso
+
+
+	      for (int i = 1; i < n; i++) {
+		      int tmp = array[i];
+		      int j = i - 1;
+
+		      while ( (j >= 0) && (array[j] > tmp) ){
+
+			      array[j + 1] = array[j];
+			      j--;
+		      }
+		      array[j + 1] = tmp;
+	      }
+
+
+resposta: 
+
+*******comparações***************
+
+melhor caso: n-1 
+
+pior caso: (n-1)*n   
+           ------- 
+              2
+
+
+**********movimentações*************
+
+melhor caso: 2(n-1)
+
+
+pior caso: n(n+1)-2  
+           --------
+              2
+
+
+
+
+
+
+
+
+
+
+
+

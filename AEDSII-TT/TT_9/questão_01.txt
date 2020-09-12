@@ -1,0 +1,38 @@
+questão 1 : Dado o c ́odigo abaixo, apresente a fun ̧c ̃ao de complexidade para o n ́umero de multiplica ̧
+c ̃oes para o pior e melhor caso usando a nota ̧c ̃ao Θ. Al ́em disso, 
+descreva quando acontece cada um desses dois casos. 
+Em seguida, responda (e justifique)se esse custo para cada caso  ́e O(n2 × lg n) e Ω(lg n).
+
+
+resposta: 
+
+melhor caso : 2n² + lg(n) + lg(n-1) - 10 = Θ(n²)
+
+
+pior caso: 2n² +2n + lg(n) + lg(n-1) - 16 = Θ(n²)
+
+
+sim, pois ambos atendem aos criterios exigidos para o limite justo(Θ) constatado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

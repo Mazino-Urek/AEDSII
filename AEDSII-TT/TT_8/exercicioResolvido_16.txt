@@ -1,0 +1,22 @@
+Exercício Resolvido (16): Apresente o tipo de crescimento que melhor caracteriza as funções abaixo:
+
+
+resposta:
+
+--------------------------------------------------------
+        / constante / linar / polinomial / Exponencial /
+  3n    /     F     /   V   /     F      /     F       /
+  1     /     V     /   F   /     f      /     F       /
+ (3/2)n /     F     /   V   /     F      /     F       /
+  2n³   /     F     /   F   /     V      /     F       /
+  2^n   /     F     /   F   /     F      /     V       /
+  3n²   /     F     /   F   /     V      /     F       /
+  1000  /     V     /   F   /     F      /     F       /
+(3/2)^n /     F     /   F   /     F      /     V       /
+--------------------------------------------------------
+
+
+
+
+
+

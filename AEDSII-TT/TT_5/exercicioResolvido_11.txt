@@ -1,0 +1,3 @@
+Exercício Resolvido (11) : Aplique associatividade para unificar os dois somatórios abaixo:
+
+resposta: b1 + b2 + S(3 <= i): (ai + bi) 

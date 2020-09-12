@@ -1,0 +1,19 @@
+Exercício Resolvido (19): Faça a correspondência entre cada função f(n) com sua g(n) equivalente,
+em termos de Θ. Essa correspondência acontece quando f(n) = Θ(g(n)):
+
+resposta: 
+--------------------------
+     f(n)     /    g(n)  /
+  n + 30      /   3n - 1 /  
+  n² + 2n - 10/   n²+3n  /  
+  n³ * 3n     /   n⁴     /  
+  lg(n)       /   lg(2n) /  
+--------------------------
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+Exercício (3): Quando os elementos estão ordenados de forma decrescente tanto o
+Seleção como o Inserção realizam comparações.
+Nesse caso, qual dos dois algoritmos executará mais rápido? Justifique sua
+resposta
+
+
+
+resposta: o de seleção, pois ele realizará uma menor quantidade de movimentações no array;
+

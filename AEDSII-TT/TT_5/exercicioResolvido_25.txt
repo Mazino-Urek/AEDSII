@@ -1,0 +1,93 @@
+Exercício Resolvido (25): Encontre a fórmula fechada do somatório abaixo e, em seguida, prove a
+usando indução matemática.
+
+resposta: 
+
+usando a assosiatividade: 
+n     n
+∑3  + ∑i
+0     0
+
+
+utilizando as a formula fechada do somatorio de constante e de i
+
+3(n+1) + n(n+1)
+         ------
+           2
+
+
+simplificando: 
+
+n² + 7n +6
+----------
+    2
+
+
+
+***************************
+provando por indução:
+
+
+passo 1:
+
+0 + 0 + 6
+---------  = 3
+    2
+
+
+
+
+passo 2:
+
+S =  S    + a
+(n)  (n-1)  (n)
+
+
+S   = n² +7n +6
+(n)   ---------
+          2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+Exercício Resolvido (24): Encontre a fórmula fechada do somatório abaixo:
+
+resposta: 
+
+aplicando p2 2 simplificando:
+
+S + (n+1).2n+1 = ∑(i+1).2^i+1
+(n)         (0 ≤ i ≤ n)
+
+
+aplicando a assoiatividade:
+
+S+ (n+1).2^n+1 = 2∑i.2^i    + 2∑2^i
+ (n)          0 ≤ i ≤ n    0 ≤ i ≤ n
+
+
+aplicando a distributividade:
+
+S + (n+1).2^n+1 = 2.S+ 2(2^n+1- 1)
+ (n)                (n)   
+
+
+simplificando:
+
+
+s   = (n-1).2^n+1 + 2
+ (n)
+
+

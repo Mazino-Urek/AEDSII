@@ -1,0 +1,43 @@
+Exercício Resolvido (23): Aplique P2 para obter a fórmula fechada da soma Sn dos elementos de uma PG
+
+
+resposta: 
+
+aplicando p2:
+
+   S + a*x^n+1  =  a*x⁰ + S(a*x^i+1)
+    (n)               (0<=i<=n)
+
+   S + a*x^n+1  =  a + x * S
+    (n)                     (n)
+                       
+
+simplificando
+
+(1 - x) S = a - a.x^n+1
+         (n)
+  
+ 
+S   =  a -a * x^n+1 
+ (n)   ------------
+          1 - x
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

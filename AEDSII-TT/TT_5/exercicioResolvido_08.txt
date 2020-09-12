@@ -1,0 +1,6 @@
+Exercício Resolvido (8) : Podemos afirmar que  
+S(0 <= i <=5) : i * (i-1) * (5-i) = S(0 <= i <=5) : i * (i-1) * (5-i)
+
+resposta: Sim, como visto no exercicio anterior a0, a1, a5 são iguais a zero, portanto ambos tem o
+          mesmo resultado.
+

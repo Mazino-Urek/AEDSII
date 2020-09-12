@@ -1,0 +1,27 @@
+Exercício Resolvido (1): Uma dúvida básica sobre o operador AND pode prejudicar a compreensão
+do nosso algoritmo. Assim, o que será escrito na tela pelo programa
+abaixo?
+
+class ExercicioDuvidaAND {
+	public static boolean m1(){
+		System.out.println("m1");
+		return false;
+	}
+	public static boolean m2(){
+		System.out.println("m2");
+		return true;
+	}
+	public static void main (String[] args) {
+		System.out.println("inicio");
+		boolean and = m1() && m2();
+		System.out.println("fim: " + and);
+	}
+}
+
+
+resposta: 
+
+inicio
+m1
+fim: false
+

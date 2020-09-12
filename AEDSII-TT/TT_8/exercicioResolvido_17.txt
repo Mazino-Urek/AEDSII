@@ -1,0 +1,40 @@
+Exercício Resolvido (17); Classifique as funções f1(n) = n2, f2(n) = n, f3(n) = 2n, f4(n) = (3/2)n, 
+f5(n) = n3e f6(n) = 1 de acordo com o crescimento, do mais lento para o mais rápido
+
+resposta: 
+
+f6(n) = 1
+
+f2(n) = n
+
+f1(n) = n²
+
+f5(n) = n³
+
+f4(n) = (3/2)^n
+
+f3(n) = 2^n
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

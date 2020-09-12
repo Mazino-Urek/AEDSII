@@ -1,0 +1,4 @@
+Exercício Resolvido (14): Mostre os valores de a e b na sequência 1, 4, 7, 10, 13, ...
+
+resposta: a = 1
+          b = 3

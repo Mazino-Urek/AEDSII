@@ -1,0 +1,9 @@
+Exercício Resolvido (12) : Mostre (e justifique) se cada expressão abaixo é verdadeira ou falsa:
+
+resposta : 
+
+a) (V) -> a0 é igual a zero, portanto não influencia no resultado final.
+b) (F) -> a propriendade da associatividade não foi aplicada.
+c) (V) -> a propriedade da distributividade foi aplicada de maneira correta.
+d) (F) -> oque esta sendo elevado é cada termo de k não o resultado do somatorio.
+e) (V) -> a propriedade da assotiatividade foi aplicada de maneira correta.

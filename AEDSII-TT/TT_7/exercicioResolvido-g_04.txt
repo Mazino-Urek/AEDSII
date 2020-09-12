@@ -1,0 +1,22 @@
+Exercício Resolvido (4): Nosso dinheiro é um número real. Conseguimos utilizar adequadamente
+o Counting Sort para ordenar valores financeiros?
+
+respota: Sim, pois apesar de ser um numero real ele possui apenas duas casas decimais que podem ser 
+retiradas multplicando por 100 antes da ordenação, e após ela, é só dividir por 100.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

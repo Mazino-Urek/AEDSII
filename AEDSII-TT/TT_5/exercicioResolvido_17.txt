@@ -1,0 +1,18 @@
+Exercício Resolvido (17): Dada a fórmula fechada do somatório dos n primeiros números inteiros,
+mostre um algoritmo mais eficiente que o apresentado abaixo:
+
+int somatorio(int n){
+int soma = 0;
+for(int i = 1; i <= n; i++){
+soma += i;
+}
+return soma;
+}
+
+
+resposta: 
+
+int somatorio(int n){
+   return (n * (n+1)) / 2;
+}
+

@@ -1,0 +1,47 @@
+Exercício Resolvido (13): Apresente a função e a complexidade para o número de subtrações para o
+pior e melhor caso
+
+
+i = 0;
+while (i < n) {
+i++;
+a--;
+}
+if (b > c) {
+i--;
+} else {
+i--;
+a--;
+}
+
+
+respota: 
+melhor caso: T(n) = n +2 = O(n), Ω(n), Θ(n) 
+
+
+pior caso: T(n) = n +1 = O(n), Ω(n), Θ(n)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

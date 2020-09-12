@@ -1,0 +1,56 @@
+Exercício (8): Dada a definição da notação Ω:
+
+Mostre um valor c e outro m tal que, para n ≥ m, |g(n)| ≥ c x |f(n)|,
+provando que 3n2+ 5n +1 é Ω(n2)
+
+respota: c = 1 e m = 0.05
+
+Mostre um valor c e outro m tal que, para n ≥ m, |g(n)| ≥ c x |f(n)|,
+provando que 3n2 + 5n +1 é Ω(n)
+
+resposta: c = 1  e m = 0,2
+
+Prove que 3n²+ 5n +1 não é Ω(n³)
+
+resposta: f(n) é uma função de segundo grau enquanto g(n) é do terceiro grau.Portanto sempre 
+avera valores de n em que f(n) < g(n)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

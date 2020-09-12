@@ -1,0 +1,59 @@
+Exercício (13): No Exercício Resolvido (10), verificamos que quando desejamos pesquisar
+a existência de um elemento em um array de números reais é adequado
+executar uma pesquisa sequencial cujo custo é Θ(n). Nesse caso, o custo
+de ordenar o array e, em seguida, aplicar uma pesquisa binária é mais
+elevado, Θ(n * lg(n)) + Θ(lg(n)) = Θ(n * lg(n)). Agora, supondo que
+desejamos efetuar n pesquisas, responda qual das duas soluções é mais
+eficiente
+
+
+
+resposta: a segunda opção(ordenação e pesquisa binaria), pois apesar do gasto inicial ser maior, devido 
+a ordenação, ao realizar n buscas acabara por compensar, pois o custo da pesquisa binaria é menor que
+o da pesquisa sequencial.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

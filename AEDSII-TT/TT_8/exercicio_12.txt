@@ -1,0 +1,38 @@
+Exercício (12) : Apresente um código, defina duas operações relevantes e apresente a
+função e a complexidade para as operações escolhidas no pior e melhor
+caso
+
+
+void selecao (int* array, int n) {
+
+	int aux, pega;
+
+	for(int i = 0;  i < n-1; n++) {
+		for(int g = i + 1; g < n; g++)
+			if(array[i] > array[g])
+				aux = g;
+		
+		pega = array[aux];
+		array[aux] = array[i];
+		array[i] = pega;
+	}
+}
+
+
+
+resposta: 
+operações relevantes ssão as comparações entre elementos do array e as movimentações.
+
+
+**************comparações*********
+
+melhor caso = pior caso: n² - n = O(n²), Ω(n²) e Θ(n²) 
+                         -    -
+			 2    2
+
+***********movimentações***********
+
+melhor caso = pior caso: (n - 1) * 3 = O(n), Ω(n) e Θ(n) 
+
+
+

@@ -1,0 +1,9 @@
+Exercício (2): Aplique P1 para unificar os somatórios abaixo:
+
+resposta: a(m-1) - a(m-2) - S ai 
+                        (1<=i<=n)
+
+
+
+
+

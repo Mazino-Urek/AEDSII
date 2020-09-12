@@ -1,0 +1,11 @@
+Exercício Resolvido (5): Calcule o número de multiplicações que o código abaixo realiza:
+
+for (int i = n; i > 0; i /= 2)
+	a *= 2;
+
+
+
+resposta: ⌊lg(n)⌋ +1 multiplicações
+
+
+

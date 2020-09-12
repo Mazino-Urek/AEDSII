@@ -1,0 +1,14 @@
+Exercício Resolvido (15): Apresente a função e a complexidade para o número de subtrações para o
+pior e melhor caso
+
+for (i = 0; i < n; i++) {
+for (j = 1; j <= n; j *= 2) {
+b--;
+}
+}
+
+
+resposta: 
+
+melhor caso = pior caso: f(n) =  n * lg(n) + n = O(n x lg(n)), Ω(n x lg(n)) e Ɵ(n x lg(n))
+

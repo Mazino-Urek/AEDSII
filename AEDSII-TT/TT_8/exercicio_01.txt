@@ -1,0 +1,35 @@
+Exercício (1): Encontre o maior e menor valores em um array de inteiros e, em seguida,
+encontre a função de complexidade de tempo para sua solução
+
+
+resposta:
+
+int menor = array[0];
+int maior = menor;
+
+for(int i = 1; i < array.length; i++)
+	if(array[i] < menor)
+		menor = array[i];
+	else if(array[i] > maior)
+		maior = array[i];
+
+System.out.prinln("maior = " + maior + "\nmenor = " + menor);
+
+
+*******analise**********
+
+operações relevantesão as comparações entre elementos da array
+
+melhor caso: T(n) = n - 1
+
+pior caso: T(n) = 2 (n-1)
+
+
+conclusão: o algoritimo é otimo, pois é necessário passar por cada elemento do array para garantir a
+resposta.
+
+
+
+
+
+

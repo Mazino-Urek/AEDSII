@@ -1,0 +1,32 @@
+Exercício Resolvido (12): Apresente a função e a complexidade para os números de comparações e
+movimentações de registros para o pior e melhor caso: 
+
+			 void imprimirMaxMin( int [] array, int n){
+				 int maximo, minimo;
+				 if (array[0] > array[1]){
+					 maximo = array[0]; minimo = array[1];
+				 } else {
+					 maximo = array[1]; minimo = array[0];
+				 }
+				 for (int i = 2; i < n; i++){
+					 if (array[i] > maximo){
+						 maximo = array[i];
+					 } else if (array[i] < minimo){
+						 minimo = array[i];
+					 }
+				 }
+			 }
+
+resposta: 
+*****comparações******
+melhor caso: (n - 1) = O(n), Ω(n), Θ(n)
+
+pior caso: 1 + 2(n - 2) = O(n), Ω(n), Θ(n)
+
+*****movimentações********
+melhor caso:  2 = O(1), Ω(1), Θ(1)
+
+pior caso: n + 2 = O(n), Ω(n), Θ(n)
+
+
+

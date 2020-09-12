@@ -1,0 +1,34 @@
+Exercício Resolvido (15): Aplique as regras de transformação para obter a fórmula fechada da
+soma Sn dos elementos de uma PA     
+                                     S a+b*i     
+                                 (a<=i<= n)   
+
+
+resposta:
+
+aplicando a comutividade:
+
+2x = S a+ b*i  +  S a+ b*n -b*i
+ (a<=i<= n)   (a<=i<= n)
+
+
+aplicando a assotiatividade e simplificando: 
+
+
+2x = S (2*a + b*n)
+ (a<=i<= n)
+
+aplicando a distributividade:
+
+2x = (2*a + b*n) * S 1
+               (a<=i<= n)
+
+
+agora temos que o somario de 1 é igula a (n +1), portanto:
+
+x = (2*a + b*n) * (n+1)
+    -------------------
+             2
+
+
+

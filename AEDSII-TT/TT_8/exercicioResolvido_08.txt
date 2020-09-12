@@ -1,0 +1,16 @@
+Exercício Resolvido (8): 
+
+	int min = array[0];
+	for (int i = 1; i < n; i++){
+		if (min > array[i]){
+			min = array[i];
+		}
+	}
+
+
+
+resposta: 
+4o) O nosso algoritmo é ótimo? Por que?
+	sim, pois seu custo é igual ao menor custo possivel.
+
+

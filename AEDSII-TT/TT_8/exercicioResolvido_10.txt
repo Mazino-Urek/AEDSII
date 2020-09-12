@@ -1,0 +1,9 @@
+Exercício Resolvido (10): Um aluno deve procurar um valor em um array de números reais. Ele tem
+duas alternativas. Primeiro, executar uma pesquisa sequencial. Segundo,
+ordenar o array e, em seguida, aplicar uma pesquisa binária. O que fazer?
+
+resposta: realizar a pesquisa sequencial, pois como ele procura apenas um valor, o custo de ordenar
+o array não valeria a pena.
+
+
+

@@ -1,0 +1,23 @@
+Exercício (9) : Dada a definição da notação Θ:
+
+Mostre um valor para c1, c2e m tal que, para n ≥ m,c1x |f(n)| ≤ |g(n)| ≤ c2x |f(n)|, 
+provando que 3n2+ 5n +1 é Ɵ(n²)
+
+
+resposta: c1 = 1/10 , c2 = 1 e m = 0.9
+
+
+Prove que 3n2+ 5n +1 não é Θ(n)
+
+resposta: as funções são de grau diferente, portanto a de menor grau (g(n)) sempre sera menor que a de 
+maior grau (f(n)) independente da contatne (c)
+
+
+Prove que 3n²+ 5n +1 não é Θ(n3)
+
+resposta: as funções são de grau diferente, portanto a de menor grau (f(n)) sempre será menor que a de
+maior grau (g(n)) independente da contatne (c)
+
+
+
+

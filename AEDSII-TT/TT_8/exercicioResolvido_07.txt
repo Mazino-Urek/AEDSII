@@ -1,0 +1,25 @@
+Exercício Resolvido (7): Encontre o menor valor em um array de inteiros
+
+			 int min = array[0];
+			 for (int i = 1; i < n; i++){
+				 if (min > array[i]){
+					 min = array[i];
+				 }
+			 }
+
+
+resposta: 
+1o) Qual é a operação relevante?
+	a comparação entre elementos do array
+
+2o) Quantas vezes ela será executada?
+	n-1 vezes
+
+3o) O nosso T(n) = n – 1 é para qual dos três casos?  
+        para todos os três
+
+
+
+
+
+

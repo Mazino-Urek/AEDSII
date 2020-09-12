@@ -1,0 +1,34 @@
+Exercício Resolvido (27): Encontre a fórmula fechada do somatório abaixo e, em seguida, prove a
+usando indução matemática.
+
+
+resposta: 
+
+aplicando a comutividade e simplificando:
+n
+∑[20i] 
+1
+
+aplicando a distributividade e a formula do somatorio de i, temos:
+
+10n² + 10n
+
+
+*************
+provando por indução
+
+passo 1: 
+
+10 + 10 = 20
+
+
+passo 2: 
+
+S  = S   + a
+(n)  (n-1) (n)
+
+
+S  = 10n² + 10n
+(n)
+
+

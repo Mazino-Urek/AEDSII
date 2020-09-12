@@ -1,0 +1,8 @@
+exercicio resolvido 2 : O Algoritmo de Seleção é uma solução conhecida para a ordenação
+interna. Quantas comparações entre registros ele realiza?
+
+resposta : 
+
+ S (0 <= i <= n-2): n-i-1
+
+//Nota: o 'S' é utilizado como substituto para o simbolo do somatório (sigma)

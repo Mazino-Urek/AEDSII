@@ -1,0 +1,39 @@
+O Algoritmo de Seleção é uma solução conhecida para a ordenação
+interna. Anteriormente, vimos que ele realiza (n - i - 1) comparações
+entre registros. Agora, mostre a fórmula fechada para esse somatório
+
+
+
+resposta: 
+primeirarmente aplicaremos a associatividade:
+
+    S n    -    S i    -    S 1
+(0<=i<=n-2) (0<=i<=n-2) (0<=i<=n-2)
+
+
+
+agora apliclaremos as propriedades do somatorio de constantes, somatorio de 1 e somatorio de 'i'
+assim teremos:
+
+
+ n*(n-1) - (n-2) * (n-1) - n-1
+           -------------
+                2
+
+agora simplificareos utilizando o mmc:
+
+2*n*(n-1) - (n-2) * (n-1) - 2*(n-1)
+------------------------------------
+                  2
+
+continuando a simplificação temos:
+
+n² - n  
+-    -  = o(n²)
+2    2
+
+
+
+
+
+

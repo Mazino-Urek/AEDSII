@@ -1,0 +1,14 @@
+Exercício Resolvido (11): Responda se as afirmações são verdadeiras ou falsas:
+
+resposta: 
+
+a) falso
+b) verdadeiro
+c) verdadeiro
+d) verdadeiro
+e) verdadeiro
+f) falso
+g) falso
+h) verdadeiro
+i) falsa
+

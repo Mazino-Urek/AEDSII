@@ -1,0 +1,7 @@
+Exercício Resolvido (1): Em nosso exemplo, o algoritmo terminou sua execução?
+
+
+resposta: não, pois aimda falta atualizar o arra contagem.
+
+
+

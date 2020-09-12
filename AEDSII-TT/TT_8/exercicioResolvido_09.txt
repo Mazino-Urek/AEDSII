@@ -1,0 +1,26 @@
+Exercício Resolvido (9):
+
+	boolean resp = false;
+	for (int i = 0; i < n; i++){
+		if (array[i] == x){
+			resp = true;
+			i = n;
+		}
+	}
+
+
+resposta: 
+
+1o) Qual é a operação relevante?
+	R: a comparação entre os elementos da array
+
+2o) Quantas vezes ela será executada?
+	R: Melhor caso: f(n) = 1
+	Pior caso: f(n) = n
+	Caso médio: f(n) = (n + 1) / 2
+
+3o) O nosso algoritmo é ótimo? Por que?
+	sim, pois não sabemos se o array esta ordenado, portanto o algoritimo tem o menro custo possivel
+	para essa situação.
+
+

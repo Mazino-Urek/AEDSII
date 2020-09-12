@@ -1,0 +1,36 @@
+Exercício: Mostre todas as comparações e movimentações do algoritmo anterior para
+o array abaixo:
+
+[14, 4, 8, 2, 14, 17, 6, 18, 10, 16, 15, 5, 13, 9, 1, 11, 7, 3]
+
+resposta:
+
+*************comparações*************
+
+não é feita nenhuma comparações com elementos do array
+
+
+******************movimentações****************
+
+//nota: assim como em exercicios anteriores só sera considerado movimentações que incluam o array a 
+ser ordenado.
+
+ordenado[2] <--> 3
+ordenado[6] <--> 7
+ordenado[10] <--> 11
+ordenado[0] <--> 1
+ordenado[8] <--> 9
+ordenado[12] <--> 13
+ordenado[4] <--> 5
+ordenado[14] <--> 15
+ordenado[15] <--> 16
+ordenado[9] <--> 10
+ordenado[17] <--> 18
+ordenado[5] <--> 6
+ordenado[16] <--> 17
+ordenado[13] <--> 14
+ordenado[1] <--> 2
+ordenado[7] <--> 8
+ordenado[3] <--> 4
+ordenado[11] <--> 12
+

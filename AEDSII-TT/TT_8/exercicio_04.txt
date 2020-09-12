@@ -1,0 +1,13 @@
+Exercício (4): Preencha verdadeiro ou falso na tabela abaixo:
+
+resposta:
+
+
+                     |Ω(1)|Ω(lg n)|Ω(n)|Ω(n*lg n)|Ω(n²)|Ω(n³)|Ω(n⁵)|Ω(n²⁰)|
+f(n) = lg(n)         | V  |   F   | F  |    F    |  F  |  F  |  F  |  F   |
+f(n) = n*lg(n)       | V  |   V   | V  |    F    |  F  |  F  |  F  |  F   |
+f(n) = 5n+1          | V  |   V   | V  |    F    |  F  |  F  |  F  |  F   |
+f(n) = 7n⁵-3n³       | V  |   V   | V  |    V    |  V  |  V  |  F  |  F   |
+f(n) = 99n³ - 1000n² | V  |   V   | V  |    V    |  V  |  V  |  F  |  F   |
+f(n) = n⁵ - 99999n⁴  | V  |   V   | V  |    V    |  V  |  V  |  F  |  F   |
+

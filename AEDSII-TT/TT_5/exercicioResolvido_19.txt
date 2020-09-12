@@ -1,0 +1,3 @@
+Exercício Resolvido (19): Justifique a igualdade:
+
+resposta: somar 0 não afeta o resultado final

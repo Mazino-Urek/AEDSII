@@ -1,0 +1,36 @@
+Exercício (11): Suponha um sistema de monitoramento contendo os métodos telefone, luz,
+alarme, sensor e câmera, apresente a função e ordem de complexidade
+para o pior e melhor caso: (a) método alarme; (b) outros métodos.
+
+void sistemaMonitoramento() {
+if (telefone() == true && luz() == true){
+
+alarme(0);
+} else {
+alarme(1);
+}
+
+for (int i = 2; i < n; i++){
+if (sensor(i- 2) == true){
+alarme (i - 2);
+} else if (camera(i- 2) == true){
+alarme (i - 2 + n);
+} } }
+
+
+
+resposta: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

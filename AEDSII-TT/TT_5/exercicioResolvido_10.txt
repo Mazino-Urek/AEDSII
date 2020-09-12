@@ -1,0 +1,6 @@
+Exercício Resolvido (10) : S(1 <= m <= 4): 8k - 6m
+Escolha 1 resposta:
+
+resposta:
+  8k - 6 + 8k -12 +8k -18 + 8k -24
+ 

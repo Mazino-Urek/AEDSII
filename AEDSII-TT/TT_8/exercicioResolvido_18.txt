@@ -1,0 +1,26 @@
+Exercício Resolvido (18): Classifique as funções f1(n) = n.log6(n), f2(n) = lg(n), f3(n) = log8(n), 
+f4(n) =8n2, f5(n) = n.lg(n), f6(n) = 64, f7(n) = 6n3, f8(n) = 82n e f9(n) = 4n de acordo com o 
+crescimento, do mais lento para o mais rápido
+
+
+resposta: 
+
+f6(n) = 64
+
+f3(n) = log8(n)
+
+f2(n) = lg(n)
+
+f9(n) = 4n
+
+f1(n) = n.log6(n)
+
+f5(n) = n.lg(n)
+
+f4(n) = 8n²
+
+f7(n) = 6n³
+
+f8(n) = 8^2n
+
+

@@ -1,0 +1,6 @@
+Exercício Resolvido (9) : Considere a soma 4 + 25 + 64 + 121.
+Qual expressão é igual à soma acima?
+
+resposta:
+ S(0 <= i <= 3) : (3i + 2)² 
+

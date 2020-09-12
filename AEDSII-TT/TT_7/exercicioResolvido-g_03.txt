@@ -1,0 +1,10 @@
+Exercício Resolvido (3): O Counting Sort pode ser aplicado adequadamente na ordenação de
+strings e números reais?
+
+resposta: não, pois teremos um problema combinatorio para identificar a posição de cada string.
+No caso dos numeros reais, a infinitos valores entre dois numeros inteiros.
+
+
+
+
+

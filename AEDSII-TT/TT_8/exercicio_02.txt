@@ -1,0 +1,16 @@
+Exercício (2): Considerando o problema de encontrar o maior e menor valores em um
+array de inteiros, veja os quatro códigos propostos e analisados no livro do
+Ziviani
+
+
+
+
+
+
+
+
+
+
+
+
+

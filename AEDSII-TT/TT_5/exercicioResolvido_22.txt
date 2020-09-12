@@ -1,0 +1,6 @@
+Exercício Resolvido (22): Por que a primeira fórmula é mais adequada?
+
+
+resposta: o primeiro somatorio não soma valores que não alteram o resultado final, pois os dois
+primeiros e o ultimo termo do segundo somario resultam em 0.
+

@@ -1,0 +1,12 @@
+Exercício Resolvido (16):Sabendo a fórmula da soma de uma progressão aritmética qualquer,
+mostre a fórmula para o somatório de 0 + 1 + 2 + 3 + ... + n
+
+
+resposta: para esta situação usaremos o somatorio de uma pa cujos valores de a e b são 0 e 1 
+respectivamenste. portanto temos:
+  
+              (2*0 +1*n) * (n+1)  =  n * (n+1)
+              ------------------     ---------
+                       2                 2  
+
+

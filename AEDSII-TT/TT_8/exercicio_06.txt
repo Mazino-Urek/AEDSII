@@ -1,0 +1,42 @@
+Exercício (6): Dado f(n)=3n2 -5n-9, g(n) = n*lg(n), l(n) = n.lg2 (n) e h(n) = 99n8, 
+qual é a ordem de complexidade das operações:
+
+respostas: 
+
+a) f(n) + g(n) - h(n)
+   O(f(n)) + O(g(n)) - O(h(n))
+   O(maximo (f(n) , g(n) ,h(n)))
+   O(h(n))
+
+
+b) O(f(n) + O(g(n)) - O(h(n))
+   O(f(n) + O(h(n)))
+   O(h(n))
+
+
+c) f(n) x g(n)
+   O(f(n)) * O(g(n))
+   O(f(n) * g(n))
+   O(3n³*lg(n) - 5n²*lg(n) - 9n*lg(n))
+
+
+d) g(n) x l(n) + h(n)
+   O(g(n)) x O(l(n)) + O(h(n))
+   O(g(n)) x o(maximo (l(n) , h(n)))
+   O(g(n)) x O(h(n))
+   O(g(n) x h(n))
+   O(293n¹⁰ - 495n⁹ - 891n⁸)
+
+
+e) f(n) x g(n) x l(n)
+   O(f(n)) x O(g(n)) x O(l(n))
+   O(f(n) x g(n)) x (l(n))
+   O(3n³*lg(n) - 5n²*lg(n) - 9n*lg(n) x l(n) ) 
+   O(3n⁴*lg(n)*lg²(n0) - 5n³*lg(n)*lg²(n) - 9n²*lg(n)*lg²(n))
+
+
+f) O(O(O(O(f(n)))))
+   O(f(n))
+
+
+

@@ -1,0 +1,15 @@
+Exercício (5): Preencha verdadeiro ou falso na tabela abaixo:
+
+
+resposta:
+
+---------------------------------------------------------------------------
+                     |Θ(1)|Θ(lg n)|Θ(n)|Θ(n*lg n)|Θ(n²)|Θ(n³)|Θ(n⁵)|Θ(n²⁰)|
+f(n) = lg(n)         | F  |   V   | F  |    F    |  F  |  F  |  F  |  F   |
+f(n) = n*lg(n)       | F  |   F   | F  |    V    |  F  |  F  |  F  |  F   |
+f(n) = 5n+1          | F  |   F   | F  |    F    |  F  |  F  |  F  |  F   |
+f(n) = 7n⁵-3n³       | F  |   F   | F  |    F    |  F  |  F  |  F  |  F   |
+f(n) = 99n³ - 1000n² | F  |   F   | F  |    F    |  F  |  f  |  F  |  F   |
+f(n) = n⁵ - 99999n⁴  | F  |   F   | F  |    F    |  F  |  F  |  F  |  F   |
+---------------------------------------------------------------------------
+

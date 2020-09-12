@@ -1,0 +1,39 @@
+Exercício (7): Dada a definição da notação O:
+
+Mostre um valor c e outro m tal que, para n ≥ m, |3n2+ 5n +1| ≤ c x |n2|, 
+provando que 3n2 + 5n +1 é O(n2)
+
+resposta: c = 5 e m = 37
+
+Mostre um valor c e outro m tal que, para n ≥ m, |3n2 + 5n +1| ≤ c x |n3|, 
+provando que 3n2 + 5n +1 é O(n3)
+
+respota: c = 1 e m = 77
+
+
+Prove que 3n2 + 5n +1 não é O(n)
+
+resposta: a primeira função é de segundo grau e o O(n) é do primeiro , portatnto não importa o valor
+da constante, sempre chegará um valor de n em que a primeira função irar ultrapassar a o valor de c*n.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

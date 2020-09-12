@@ -1,0 +1,10 @@
+Exercício Resolvido (1): Resolva as equações abaixo:
+
+resposta:
+
+a) 1024
+b) 10
+c) 4.0875
+d) 5
+e) 4
+

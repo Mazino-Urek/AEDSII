@@ -1,0 +1,6 @@
+Exercício Resolvido (21): Justifique a igualdade:
+
+resposta: ambos os somatorios somam os mesmos termos (a1 +a2 +a3 .......).
+
+
+
