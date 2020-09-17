@@ -1,0 +1,340 @@
+/*
+ * Nome: Diego Da Silva Ferreira
+ * Matricula: 71 06 78
+ *
+ * */
+
+import java.util.io.*;
+
+class Jogador {
+
+	private int[] id;
+	private String[] nome;
+	private int[] altura;
+	private int[] peso;
+	private String[] universidade;
+	private int[] anoNascimento;
+	private String[] cidadeNascimento;
+	private String[] estadoNascimento;
+
+
+	Jogador () {
+	
+	        this.id 	      = null;
+	        this.nome 	      = null;
+	        this.altura 	      = null;
+	        this.peso 	      = null;
+    	        this.universidade     = null;
+	        this.anoNascimento    = null;
+   	        this.cidadeNascimento = null;
+  	        this.estadoNascimento = null;
+	}
+
+	Jogador (int n){
+	
+
+	        this.id               = new int[n];
+	        this.nome             = new String [n];
+	        this.altura           = new int[n];
+	        this.peso             = new int[n];
+    	        this.universidade     = new String [n];
+	        this.anoNascimento    = new int[n];
+   	        this.cidadeNascimento = new String [n];
+  	        this.estadoNascimento = new String [n];
+	}
+
+//******************start metodos get **************************
+
+	int getId(int position){
+	
+		if(id != null && id.length >= 0 && position < id.length)
+			return id[position];
+
+		return -1;
+	}//end get id
+
+	int getAltura(int position){
+	
+		if(altura != null && altura.length >= 0 && position < altura.length)
+			return altura[position];
+
+		return -1;
+	}//end get altura
+
+	int getPeso(int position){
+	
+		if(peso != null && peso.length >= 0 && position < peso.length)
+			return peso[position];
+
+		return -1;
+	}//end get peso
+
+	int getAnoNascimento(int position){
+	
+		if(anoNascimento != null && anoNascimento.length >= 0 && position < anoNascimento.length)
+			return anoNascimento[position];
+
+		return -1;
+	}//end get ano Nascimento
+
+	String getNome(int position){
+	
+		if(nome != null && nome.length >= 0 && position < nome.length)
+			return nome[position];
+
+		return "";
+	}//end get nome
+
+	String getUniversidade(int position){
+	
+		if(universidade != null && universidade.length >= 0 && position < universidade.length)
+			return universidade[position];
+
+		return "";
+	}//end get universicadade
+
+	String getCidadeNascimento(int position){
+	
+		if(cidadeNascimento != null && cidadeNascimento.length >= 0 && position < cidadeNascimento.length)
+			return cidadeNascimento[position];
+
+		return "";
+	}//end get cidade Nascimento
+
+	String getEstadoNascimento(int position){
+	
+		if(estadoNascimento != null && estadoNascimento.length >= 0 && position < estadoNascimento.length)
+			return estadoNascimento[position];
+
+		return "";
+	}//end get estado Nascimento
+
+//**********************end metodos get ********************
+
+
+//*********************start metodos set *******************
+
+	void setId (int position , int id){
+	
+		if(this.id != null && this.id.length >= 0 && this.id.length > position)
+			this.id[position] = id;
+		else
+			MyIO.println("\n--> ERRO no set id");
+	}//end set id
+
+	void setNome (int position, String nome) {
+	
+		if(this.nome != null && this.nome.length >= 0 && this.nome.length > position)
+			this.nome[position] = nome;
+		else
+			MyIO.println("\n--> ERRO no set nome");
+	}//end set nome
+
+	void setAltura (int position , int altura){
+	
+		if(this.altura != null && this.altura.length >= 0 && this.altura.length > position)
+			this.altura[position] = altura;
+		else
+			MyIO.println("\n--> ERRO no set altura");
+	}//end set altura
+
+	void setPeso (int position , int peso){
+	
+		if(this.peso != null && this.peso.length >= 0 && this.peso.length > position)
+			this.peso[position] = peso;
+		else
+			MyIO.println("\n--> ERRO no set peso");
+	}//end set peso
+
+	void setUniversidade (int position, String universidade) {
+	
+		if(this.universidade != null && 
+		   this.universidade.length >= 0 && 
+		   this.universidade.length > position)
+			this.universidade[position] = universidade;
+		else
+			MyIO.println("\n--> ERRO no set universidade");
+	}//end set univesidade
+
+	void setAnoNascimento (int position , int anoNascimento){
+	
+		if(this.anoNascimento != null && 
+		   this.anoNascimento.length >= 0 && 
+		   this.anoNascimento.length > position)
+			this.anoNascimento[position] = anoNascimento;
+		else
+			MyIO.println("\n--> ERRO no set AnoNascimento");
+	}//end set Ano Nascimento
+
+	void setCidadeNascimento (int position, String cidadeNascimento ) {
+	
+		if(this.cidadeNascimento != null &&
+		   this.cidadeNascimento.length >= 0 && 
+		   this.cidadeNascimento.length > position)
+			this.cidadeNascimento[position] = cidadeNascimento;
+		else
+			MyIO.println("\n--> ERRO no set cidadeNascimento");
+	}//end set cidade nascimento
+
+	void setEstadoNascimento (int position, String estadoNascimento ) {
+	
+		if(this.estadoNascimento != null &&
+		   this.estadoNascimento.length >= 0 && 
+		   this.estadoNascimento.length > position)
+			this.estadoNascimento[position] = estadoNascimento;
+		else
+			MyIO.println("\n--> ERRO no set estadoNascimento");
+	}//set estado nascimento
+
+//****************end metodos set***************
+
+
+	/*
+	 * copia todos os atributos de outro jogador
+	 * @param Jogador outher - jogador a ser copiado
+	 * */
+	void clone (Jogador outher){
+	
+		this.id = outher.id;
+		this.nome = outher.nome;
+		this.altura = outher.altura;
+		this.peso = outher.peso;
+		this.universidade = outher.universidade;
+		this.anoNascimento = outher.anoNascimento;
+		this.cidadeNascimento = outher.cidadeNascimento;
+		this.estadoNascimento = outher.estadoNascimento;
+	}//end clone
+
+
+	/*
+	 * mostra os atributos de um jogador especifico
+	 * @param int position - jogador selecionado
+	 * */
+	void imprimir (int position){
+
+		if(id != null && id.length >= 0 && id.length > position)
+			MyIO.println("[" + id[position] + " ## " +
+					 nome[position] + " ## " +
+				       altura[position] + " ## " + 
+				       	 peso[position] + " ## " +
+		                 universidade[position] + " ## " +
+				anoNascimento[position] + " ## " +
+			     cidadeNascimento[position]	+ " ## " +
+			     estadoNascimento[position]	+ "]"     );
+
+		else
+			MyIO.println("\n --> ERRO na impressão");
+	}//end imprimir
+
+
+	void le (String fileName) {
+	
+		String aux = "";
+		RandomAccessFile raf = new RandomAccessFile("fileName" , "r");
+
+		try{
+		
+			while(raf.hasNext()){
+			
+			}
+		}
+		catch(IOExeption){
+		
+			MyIO.println("-n--> Erro arquivo inexistente");
+		}
+
+
+
+
+	}//end le
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+public class classe {
+
+	public static void main(String[] args){
+	
+		Jogador novo = new Jogador(2);
+		Jogador novo1 = new Jogador();
+
+		novo.setId(0 , 1);
+		novo.setId(1, 5);
+
+		novo1.clone(novo);
+
+		MyIO.println(novo1.getId(0) + "  " +  novo1.getId(1) );
+	}
+
+
+
+
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
