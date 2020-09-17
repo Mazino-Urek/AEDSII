@@ -2,6 +2,8 @@
  * Nome: Diego Da Silva Ferreira
  * Matricula: 71 06 78
  *
+ * vesão 3.0
+ *
  * */
 
 import java.io.*;
@@ -417,11 +419,13 @@ class Jogador {
 		int n;
 
 		try{
-			File arquivoLeitura = new File(fileName);
-			LineNumberReader linhaLeitura = new LineNumberReader(
-					                new FileReader(arquivoLeitura));
-			linhaLeitura.skip(arquivoLeitura.length());
-			n  = linhaLeitura.getLineNumber() - 1;
+			File file = new File(fileName);
+			LineNumberReader LNR = new LineNumberReader(new FileReader(file));
+			
+			LNR.mark((int)file.length() + 1);
+			
+			LNR.skip(file.length());
+			n  = LNR.getLineNumber() - 1;
 
 			this.id               = new int[n];
 			this.nome             = new String [n];
@@ -432,14 +436,13 @@ class Jogador {
 			this.cidadeNascimento = new String [n];
 			this.estadoNascimento = new String [n];
 
-			Arq.openRead(fileName);
+			LNR.reset();
+			principal = LNR.readLine();
 
 			/* sitema de leitura e separação dos atributos do arquivo*/
-			principal = Arq.readLine();
-
 			for(int i = 0; i < n; i++) {
 
-				principal = Arq.readLine();
+				principal = LNR.readLine();
 				principal += ",a";
 				aux = principal.split(",");
 
@@ -485,7 +488,7 @@ class Jogador {
 
 			}//end for
 
-			Arq.close();
+			LNR.close();
 
 		} catch (FileNotFoundException fileNothing){
 
