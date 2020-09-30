@@ -178,64 +178,78 @@ int nComparacao = 0;
 int nMovimenta = 0;
 
 /*
- * realiza a troca de posições entre dois elementos de um array de jogadores
- * @param Jogador *novo1 - posição a ser trocada
- * @param Jogador *novo2 - posição a ser trocada
+ * busca o maior id em um array de Jogador
+ * @param Jogador *array - array a ser realizada a busca
+ * @param int n - tamanho do array
  * */
-void swap(Jogador *novo1, Jogador *novo2){
-
-	nMovimenta += 3;
-
-        Jogador tmp;
-        tmp    = *novo1;
-        *novo1 = *novo2;
-        *novo2 = tmp;
-}//end swap
-
-
 int getMax(Jogador *array, int n) {
+	nMovimenta++;
 	Jogador max = array[0];
-	for (int i = 1; i < n; i++)
-		if (array[i].id > max.id)
+	for (int i = 1; i < n; i++){
+		nComparacao++;
+		if (array[i].id > max.id){
+			nMovimenta++;
 			max = array[i];
-	return max;
+		}
+	}//end for
+	return max.id;
 }//end getMax
 
+
+/*
+ * ordenada um array de jogadores pelo id, tomando como base as posições mais importantes
+ * Nota: usado em conjunto com o radixSort
+ * @param Jogador *array - array a ser ordenado
+ * @param int size - tamanho do array
+ * @param int place - setor a ser ordenado a ser ordenado
+ * */
 void countingSort(Jogador *array, int size, int place) {
-	int output[size + 1];
+	
+	Jogador output[size + 1];
 	int max = (array[0].id / place) % 10;
 
 	for (int i = 1; i < size; i++) {
-		if (((array[i].id / place) % 10) > max)
+		nComparacao++;
+		if (((array[i].id / place) % 10) > max){
+			nMovimenta++;
 			max = array[i].id;
+		}
 	}
+
+	//array de contagem
 	int count[max + 1];
 
-	for (int i = 0; i < max; ++i)
-		count[i] = 0;
+	for (int i = 0; i < max; nMovimenta++, count[i] = 0, ++i);
 
-	for (int i = 0; i < size; i++)
-		count[(array[i] / place) % 10]++;
+	for (int i = 0; i < size; nMovimenta++, count[(array[i].id / place) % 10]++ , i++);
 
-	for (int i = 1; i < 10; i++)
-		count[i] += count[i - 1];
+	for (int i = 1; i < 10; nMovimenta++, count[i] += count[i - 1], i++);
 
-	for (int i = size - 1; i >= 0; i--) {
-		output[count[(array[i] / place) % 10] - 1] = array[i];
-		count[(array[i] / place) % 10]--;
+	//ordenação
+	for (int i = size - 1; i >= 0; i--){
+		nMovimenta++;
+		output[count[(array[i].id / place) % 10] - 1] = array[i];
+		count[(array[i].id / place) % 10]--;
 	}
 
-	for (int i = 0; i < size; i++)
-		array[i] = output[i];
-}
+	for (int i = 0; i < size; nMovimenta++, array[i] = output[i], i++);
 
+}//end coutingSort
+
+
+/*
+ * ordena uma array de jogadores pelo id
+ * @param Jogador *array - array a ser ordenado
+ * @param int size - tamanho do array
+ * */
 void radixsort(Jogador *array, int size) {
 	
 	int max = getMax(array, size);
 
+	//aplicando o countingSort para ordenar elementos baseados em seu valor
 	for (int place = 1; max / place > 0; place *= 10)
 		countingSort(array, size, place);
-}
+}//end radixSort
 
 
 
@@ -260,14 +274,14 @@ int main (void){
 	free(jogador);
 
 	clock_t tempoInicial = clock();
-	bolha(novo, n);
+	radixsort(novo, n);
 	clock_t tempoFinal = clock();
 
 	for(int i = 0; i < n; i++)
 		imprimir(novo[i]);
 
 
-	FILE *arq = fopen("710678_bolha.txt", "w");
+	FILE *arq = fopen("710678_radixsort.txt", "w");
 
         fprintf(arq ,"710678\t%d\t%d\t%ld", nComparacao, nMovimenta  ,tempoFinal - tempoInicial);
 
