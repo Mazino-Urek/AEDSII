@@ -251,13 +251,16 @@ class Jogador {
 
 
 public class merg{
-	
+
+
+
 	//contam o numero de comparações e movimentações
 	public static int nCompara = 0;
 	public static int nMovi = 0;
 
 	/**
 	 * Algoritmo que intercala os elementos entre as posicoes esq e dir
+	 * @param Jogador[] array - array a ser ordenado
 	 * @param int esq inicio do array a ser ordenado
 	 * @param int meio posicao do meio do array a ser ordenado
 	 * @param int dir fim do array a ser ordenado
@@ -274,45 +277,53 @@ public class merg{
 
 		//Inicializar primeiro subarray
 		for(i = 0; i < n1; i++){
+			nMovi++;
 			a1[i] = array[esq+i];
 		}
+		a1[i] = new Jogador();
 
 		//Inicializar segundo subarray
 		for(j = 0; j < n2; j++){
+			nMovi++;
 			a2[j] = array[meio+j+1];
 		}
+		a2[j] = new Jogador();
 
 		//Sentinela no final dos dois arrays
-	//	a1[i] = a2[j] = 0x7FFFFFFF;
+		a1[i].setUniversidade("zzzzzzzzzz"); 
+		a2[j].setUniversidade("zzzzzzzzzz");
 
 		//Intercalacao propriamente dita
 		for(i = j = 0, k = esq; k <= dir; k++){
-	//		array[k] = (a1[i] <= a2[j]) ? a1[i++] : a2[j++];
-			if(a1[i].getUniversidade().compareTo(a2[j].getUniversidade()) <= 0)
-				array[k] = a1[i++];
-			else
+			nCompara += 3;
+			if(a1[i].getUniversidade().compareTo(a2[j].getUniversidade()) < 0 ||
+		           a1[i].getUniversidade().compareTo(a2[j].getUniversidade()) == 0 &&
+			   a1[i].getNome().compareTo(a2[j].getNome()) < 0){
+				nMovi++;	
+				array[k] = a1[i++];	
+			}else{
+				nMovi++;
 				array[k] = a2[j++];
-
+			}
 		}
-	}
-
-
-
+	}//end intercalar
 
 
 	/**
 	 * Algoritmo de ordenacao Mergesort.
+	 * @param Jogador[] array - array a ser ordenado
 	 * @param int esq inicio do array a ser ordenado
 	 * @param int dir fim do array a ser ordenado
 	 */
 	public  static void mergesort(Jogador[] array, int esq, int dir) {
 		if (esq < dir){
+
 			int meio = (esq + dir) / 2;
 			mergesort(array, esq, meio);
 			mergesort(array, meio + 1, dir);
 			intercalar(array, esq, meio, dir);
 		}
-	}
+	}//end mergsort
 
 
 	public static void main(String[] args) {
@@ -330,15 +341,17 @@ public class merg{
 			entrada = MyIO.readLine();
 		}//end for
 
+
+
 		tInicial = System.currentTimeMillis();		
-		mergesort(player2, 0, n);
+		mergesort(player2, 0, n-1);
 		tFinal = System.currentTimeMillis();		
 
 		for(int i = 0; i < n; i++)
 			player2[i].imprimir();
 
 
-		Arq.openWrite("710678_insercao.txt");
+		Arq.openWrite("710678_mergsort.txt");
 
 		Arq.print("710678\t"      +
 			  nCompara + "\t" +

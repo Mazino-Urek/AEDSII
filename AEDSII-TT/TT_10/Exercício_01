@@ -1,0 +1,23 @@
+exercicio 1 - Seja nossa Pilha, faça um método RECURSIVO que soma o 
+conteúdo dos elementos contidos na mesma
+
+
+public static void somaRecusdivo (Celula i) {
+
+	int resp = 0;
+	
+	if(i != null){
+	
+
+		resp = i.elemento();
+
+		resp += somaRecursiva(i.proxima);
+	
+	}
+
+	return resp;
+}
+
+
+
+

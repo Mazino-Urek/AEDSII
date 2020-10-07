@@ -1,0 +1,20 @@
+eercicio 2 - Seja nossa Pilha, faça um método que retorna o maior 
+elemento contido na pilha
+
+int maior(){
+
+	Celula i = topo
+	int resp = i.elemento();
+
+	for(i = i.proximo(); i != null; i = i.proximo()){
+
+		if(resp < i.elemento()){
+			resp = i.elemento();
+		}
+	}
+
+	reuturn resp;
+}
+
+
+

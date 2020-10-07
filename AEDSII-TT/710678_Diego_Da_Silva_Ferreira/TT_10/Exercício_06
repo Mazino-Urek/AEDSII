@@ -1,0 +1,20 @@
+exercicio 6 - Seja nossa Pilha, faça um método ITERATIVO para mostrar 
+os elementos da pilha na ordem em que os mesmos foram inseridos
+
+void mostrar (Celula i){
+
+	int n = 0;
+	int aux[100];
+
+	for(n = 0; i != NULL; i = i.proximo(), n++){
+	
+		aux[n] = i.elemento();
+
+	}
+
+	for(int f = n-1; f >= 0; f--){
+
+		printf("%d\n", aux[f]);
+	}
+}
+

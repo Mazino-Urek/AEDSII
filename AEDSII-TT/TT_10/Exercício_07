@@ -1,0 +1,25 @@
+exercicio 7 - As ilustrações abaixo mostram a execução dos métodos 
+construtor e do inserir de uma pilha, apresente o código dessa 
+classe e desses métodos
+
+
+class Pilha{
+
+	private int elemento;
+	private pilha ponterio;
+	
+
+	Pilha(int x){
+
+		elemento = x;
+		ponteiro = null;
+	}
+
+	void inserir(int x){
+
+		Pilha aux = new Pilha(x);
+		aux.ponteiro = this.ponteiro;
+		this.ponteiro = aux;
+		aux = null;
+	}
+}
