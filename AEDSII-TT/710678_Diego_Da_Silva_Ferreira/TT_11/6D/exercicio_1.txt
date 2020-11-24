@@ -1,0 +1,12 @@
+exercicio 01: Seja nossa classe Lista, implemente um método que remove a segunda
+posição válida. Siga os passos da figura abaixo
+
+resposta:
+
+
+publuc static void exercicio (){
+
+	primeiro.prox.prox = primeiro.prox.prox.prox;
+
+}
+

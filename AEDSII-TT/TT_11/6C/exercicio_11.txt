@@ -1,0 +1,29 @@
+exercicio 11: Implemente a pilha flexível com nó cabeça
+
+resposta:
+
+
+class Fila {
+	private Celula primeiro, ultimo;
+	public Fila () {
+		primeiro = new Celula();
+		ultimo = primeiro;
+	}
+
+
+	public void inserir(int x) { //Inserir(3)
+		ultimo.prox = new Celula(x);
+		ultimo = ultimo.prox;
+	}
+
+	public int remover() throws Exception{
+		if (primeiro == ultimo)
+			throw new Exception("Erro!”);
+		Celula tmp = primeiro;
+		primeiro = primeiro.prox;
+		int elemento = primeiro.elemento;
+		tmp.prox = null;
+		tmp = null;
+		return elemento;
+	}
+}

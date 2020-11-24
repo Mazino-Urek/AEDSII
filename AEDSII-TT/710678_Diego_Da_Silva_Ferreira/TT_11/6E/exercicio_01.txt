@@ -1,0 +1,26 @@
+exercicio 01:  Faça um método que inverta a ordem dos elementos da lista 
+dupla. No exemplo abaixo, após a inversão, os elementos ficarão na ordem 
+crescente
+
+
+resposta: 
+
+
+void inverte(){
+	Celula i = primeiro.prox;Celula j = ultimo;
+	while (i != j && j.prox != i){
+		int tmp = i.elemento;
+		i.elemento = j.elemento;
+		j.elemento = tmp;
+		i = i.prox;
+		j = j.ant;
+	}
+}
+
+
+
+
+
+
+
+

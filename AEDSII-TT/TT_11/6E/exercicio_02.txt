@@ -1,0 +1,20 @@
+Faça um método que inverta a ordem dos elementos da lista simples. No
+exemplo abaixo, após a inversão, os elementos ficarão na ordem crescente
+
+
+resposta:
+
+
+void inverte(){
+	Celula i = primeiro.prox;Celula j = ultimo;
+	Celula k;
+	while (i != j && j.prox != i){
+		int tmp = i.elemento;
+		i.elemento = j.elemento;
+		j.elemento = tmp;
+		i = i.prox;
+		for (k = primeiro; k.prox != j; k = k.prox); 
+		j = k;
+	}
+}
+

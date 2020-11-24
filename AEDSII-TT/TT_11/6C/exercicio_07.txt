@@ -1,0 +1,29 @@
+exercicio 07: Seja nossa Fila, faça um método recursivo para contar o número de
+elementos pares AND múltiplos de cinco contidos na fila
+
+resposta: 
+
+public conta (Celula i){
+
+	int resp;
+
+	if(i ==  null){
+
+		resp = 0;
+	
+	} else if (i.elemnto % 2 == 0 && i.elemento % 5 == 0)
+			resp = 1 + conta(i.prox);
+		
+		else
+			resp = conta(i.prox);
+
+	return resp;
+}
+
+
+
+
+
+
+
+

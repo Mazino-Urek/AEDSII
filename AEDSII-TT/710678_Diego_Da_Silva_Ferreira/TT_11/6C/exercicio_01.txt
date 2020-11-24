@@ -1,0 +1,20 @@
+exercicio 01 :  Nosso método remover remove fisicamente o nó cabeça e faz com que a
+célula do três seja a cabeça. Como o alteramos para que ele remova
+fisicamente a célula do três ?
+
+Resposta:
+
+
+public int remover() throws Exception{
+	if (primeiro == ultimo)
+		throw new Exception("Erro!”);
+	
+	int elemento = primeiro.prox.elemento;
+
+	primeiro.prox = primeiro.prox.prox;
+
+	return elemento;
+}
+
+
+

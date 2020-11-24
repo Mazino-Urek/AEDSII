@@ -1,0 +1,46 @@
+ Implemente a fila flexível sem nó cabeça.
+
+resposta:
+
+
+class Fila {
+	private Celula primeiro, ultimo;
+	public Fila () {
+		primeiro = null;
+		ultimo = primeiro;
+	}
+	
+	public void inserir(int x) { //Inserir(3)
+	
+		if(primeiro == null){
+			primeiro = new celula(x);
+			ultimo = primeiro;
+		}
+		else{
+		
+			ultimo.prox = new Celula(x);
+			ultimo = ultimo.prox;
+		}
+	}
+
+	public int remover() throws Exception{
+		if (primeiro == null)
+			throw new Exception("Erro!”);
+			
+		int elemento = primeiro.elemento;
+		Celula tmp = primeiro;
+		primeiro = primeiro.prox;
+
+		tmp.prox = null;
+		tmp = null;
+		return elemento;
+	}
+}
+
+
+
+
+
+
+
+

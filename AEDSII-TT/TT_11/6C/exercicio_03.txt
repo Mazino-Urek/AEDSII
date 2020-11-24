@@ -1,0 +1,19 @@
+exercicio 03:  Seja nossa Fila, faça um método que retorne o maior elemento 
+contido na mesma
+
+
+
+resposta: 
+
+public int maior(){
+
+	Celula cabecote = primeiro.prox;
+	int resp = cabecote.elemento;
+	cabecote = cabecote.prox;
+
+	for(; cabecote.prox != null; cabecote = cabecote.prox)		
+		if(cabecote.elemento > resp)
+			resp = cabecote.prox;
+
+	return resp;
+}

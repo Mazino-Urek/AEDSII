@@ -1,0 +1,25 @@
+ Implemente o método Celula toFila(Celula topo) que recebe o endereço de
+memória da primeira posição de uma pilha flexível e retorna o endereço de
+memória do nó cabeça de uma fila flexível contendo os elementos da pilha
+na ordem em que os mesmos foram inseridos na pilha. Seu método deve
+percorrer a pilha e inserir cada elemento da mesma na nova fila a ser
+retornada. A pilha não pode ser destruída.
+
+
+resposta: 
+
+
+Fila toFila (Celula topo){
+
+	Celula tmp;
+	Fila resp = new Fila(); 
+
+	
+	for(; tmp != null; tmp = tmp.prox){
+
+		resp.inserir(tmp.elmento);
+	}
+
+	return resp;
+}
+

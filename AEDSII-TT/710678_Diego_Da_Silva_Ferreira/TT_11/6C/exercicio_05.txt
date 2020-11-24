@@ -1,0 +1,30 @@
+exercicico 05:  Seja nossa Fila, faça um método que soma o conteúdo dos elementos
+contidos na mesma
+
+
+resposta:
+
+
+
+public int soma(){
+
+	int resp = 0;
+
+	if(pimeiro == ultimo)
+		throw new Exception("Erro!”);
+	else{
+
+		Celula cabecote = primeio.prox;
+
+		while(cabecote != null){
+
+			resp += cabecote.elemento;
+			cabecote = cabecote.prox;
+
+		}
+	}
+
+	resturn resp;
+}
+
+

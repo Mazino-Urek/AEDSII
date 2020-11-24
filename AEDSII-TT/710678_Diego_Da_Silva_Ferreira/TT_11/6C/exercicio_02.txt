@@ -1,0 +1,15 @@
+exercicio 02: contrua o metodo "mostrar" da fila:
+
+resposta:
+
+
+
+public void mostrar(){
+
+	MyIO.println("");
+	for(Celula cabecote = primeiro.prox; cabecote.prox != null; 
+	    cabecote = cabecote.prox)
+		MyIO.print("[" + cabecote.elemento + "]");
+
+}
+

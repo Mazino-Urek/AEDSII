@@ -1,0 +1,10 @@
+exercicio 04: Seja nossa Fila, faça um método para mostrar o terceiro elemento 
+supondo que o mesmo existe
+
+resposta:
+
+public void mostraTerceiro (){
+
+	MyIO.println("[" + primeiro.prox.prox.prox.elemento + "]");
+}
+

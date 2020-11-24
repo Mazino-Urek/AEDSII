@@ -1,0 +1,22 @@
+exercicio 06 : Seja nossa Fila, faça um método que inverta a ordem dos seus 
+elementos
+
+
+resposta:
+
+public void inverte () {
+
+	Celula ancora = ultimo;
+
+	while(primeiro.prox != ancora){
+
+		ultimo.prox = primeiro.prox;
+		ultimo = ultimo.prox;
+		primeiro.prox = primeiro.prox.prox;
+		ultimo.prox = null;
+
+	}
+
+	ancora = null;
+}
+
