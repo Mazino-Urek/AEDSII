@@ -240,128 +240,225 @@ class Jogador {
 	}//end ler
 }//end Jogador
 
-class No {
 
-	public Jogador elemento;
-	public No esq;
-	public No dir;
+class No{
 
-	No (Jogador elemento) {
-		this(elemento, null, null);
-	}
-	No (Jogador elemento, No esq, No dir) {
-		this.elemento = elemento;
-		this.esq = esq;
-		this.dir = dir;
-	}
-}//end CelulaDup
+	public No[] prox;
+	public boolean cor;
 
-class Arvore{
+	No(){
+		prox = new No[140];
+		for(int i = 0; i < prox.length; i++)
+			prox[i] = null;
+		this.cor = false;
+	}//end contrutor
 
-	private No raiz;
+	No(boolean cor){
+		prox = new No[140];
+		for(int i = 0; i < prox.length; i++)
+			prox[i] = null;
+		this.cor = cor;
+	}//end contrutor
+
+	/*
+	 * converte um caracter em uma posição valida da tabela hash
+	 * @param char letra - letra a ser convertida
+	 * @return int - posição obtida
+	 * */
+        public int indice(char letra){ 
+                return ((int)letra - 32);
+        }//end indice
+}//end NoT
+
+class Trie{
 	
-	Arvore () {
-		this.raiz = null;
+	private No raiz;
+
+	Trie(){
+		raiz = new No();
 	}//end construtor
 
 	/*
-	 * insere um elemento na arvore
-	 * @param Jogador jogador - elemento a ser inserido
+	 * metodo interativo para inserir elementos na arvore
+	 * @param String nome - elemento a ser inserido
 	 * */
-	void inserir (Jogador jogador) throws Exception{
-		raiz = inserir(jogador, raiz);
+	public void inserir(String nome)throws Exception{
+		inserir(nome, 0, raiz);	
 	}//end inserir
 
 	/*
-	 * insere um elemento na arvore
-	 * @param Jogador jogador - elemento a ser inserido
+	 * metodo recursivo para inserir elementos na arvore
+	 * @param String nome - elemento a ser inserido
+	 * @param int i - indice da String nome
+	 * @param No no - no atual de inserção
+	 * @throw - caso tente inserir prefixo ou elementos repetidos
 	 * */
-	No inserir (Jogador jogador , No i) throws Exception{
+	private void inserir(String nome, int i, No no)throws Exception{
 	
-		if(i == null)
-			i = new No(jogador);
-		else if(jogador.getNome().compareTo(i.elemento.getNome()) > 0)
-			i.esq = inserir(jogador, i.esq);		
-		else if(jogador.getNome().compareTo(i.elemento.getNome()) < 0)
-			i.dir = inserir(jogador, i.dir);		
-		else
-			throw new Exception("Erro --");
-		return i;
-	}//end inserir
-
-	/*
-	 * realiza uma busca na arvore pelo atributo nome do jagador
-	 * @param String nome - nome a ser procurado
-	 * @return String - SIM caso o elemento exista na arvore, NAO caso contrario
-	 * */
-	String pesquisar (String nome){
-		MyIO.print(" raiz");
-		return pesquisar(nome, raiz);
-	}//end pesquisar
-
-	/*
-	 * realiza uma busca na arvore pelo atributo nome do jagador
-	 * @param String nome - nome a ser procurado
-	 * @return String - SIM caso o elemento exista na arvore, NAO caso contrario
-	 * */
-	String pesquisar (String nome, No i){
-		String resp;
-		biArvore.comp++;
-
-		if(i == null){
-			resp = " NAO";
+		if(no.cor)
+			throw new Exception("erro ao inserir 2");
+		else if(i == (nome.length())){
+				no.cor = true;
+				no.prox = null;
 		}
 		else{
-			biArvore.comp++;
-		       	if(nome.equals(i.elemento.getNome())){
-				resp = " SIM";
+			char letra = nome.charAt(i);
+			int prox = no.indice(letra);
+			//criando ramificação
+			if(no.prox[prox] == null){
+				no.prox[prox] = new No();	
+				inserir(nome, i + 1, no.prox[prox]);
 			}
-			else{
-				biArvore.comp++;
-			       	if(nome.compareTo(i.elemento.getNome()) > 0){
-					MyIO.print(" dir");
-					resp = pesquisar(nome, i.esq);
-				}
-				else{
-					MyIO.print(" esq");
-					resp = pesquisar(nome, i.dir);
-				}//end else
-			}//end else
+			//garantindo a não inserção de prefixo
+			else if(i < nome.length() - 1)
+				inserir(nome, i + 1, no.prox[prox]);
+			else
+				throw new Exception("erro ao inserir 1");
 		}//end else
+	}//end inserir
+
+	/*
+	 * Metodo interativo para pesquisar elementos na arvore
+	 * @param String nome - elemento a ser pesquisado
+	 * @return boolean - true caso o elemento exista a arvore
+	 * */
+	public boolean pesquisar(String nome){
+		return pesquisar(nome, 0, raiz);
+	}//end pesquisar
+
+	/*
+	 * Metodo recursivo para pesquisar elementos na arvore
+	 * @param String nome - elemento a ser pesquisado
+	 * @param int i - indice da string nome
+	 * @param No no - no atual da pesquisa
+	 * @return boolean resp - true caso o elemento exista a arvore
+	 * */
+	private boolean pesquisar(String nome, int i, No no){
+		boolean resp;
+
+		ArvoreT.comp++;
+		if(no.cor){
+			ArvoreT.comp++;
+			if(i == nome.length())
+				resp = true;
+			else
+				resp = false;
+		}else{
+			char letra = nome.charAt(i);
+			int prox = no.indice(letra);
+			ArvoreT.comp++;
+			if(no.prox[prox] == null)
+				resp = false;
+			else
+				resp = pesquisar(nome, i+1, no.prox[prox]);
+		}
 		return resp;
 	}//end pesquisar
-}//end Arvore
 
-public class biArvore{
+	/*
+	 * Metodo interativo para mostrar todos os elementos contidos na arvore
+	 * */
+	public void mostrar(){
+		mostrar("", raiz);
+	}//end mostrar
 
+	/*
+	 * Metodo recursivo para mostrar todos os elementos contidos na arvore
+	 * @param String nome - elemento encontrado na arvore
+	 * @param No no - No atual da pesquisa
+	 * */
+	private void mostrar(String nome, No no){
+		if(no.cor)
+			MyIO.println(nome);
+		else
+			for(int i = 0; i < no.prox.length; i++)
+				if(no.prox[i] != null)
+					mostrar((nome + (char)(i + 32)), no.prox[i]);	
+	}//end mostrar
+
+	/*
+	 * Metodo interativo para realizar o merge de duas arvores
+	 * @param Trie other - arvore a ser realizado o merge
+	 * @return resp - arvore resultado do merge
+	 * */
+	public Trie merge(Trie other)throws Exception{
+		Trie resp = new Trie();
+		merge("", other.raiz, resp);
+		merge("", this.raiz, resp);
+		return resp;
+	}//end mostrar
+
+	/*
+	 * Metodo recursivo para realizar a copia de uma arvore
+	 * @param Trie merge - arvore resulado
+	 * @param String nome - elemento a ser inserido na arvore resultado
+	 * @param No no - No atual de copia
+	 * */
+	public void merge(String nome, No no, Trie merge)throws Exception{
+		if(no.cor)
+			merge.inserir(nome);
+		else
+			for(int i = 0; i < no.prox.length; i++)
+				if(no.prox[i] != null)
+					merge((nome + (char)(i + 32)), no.prox[i], merge);	
+	}//end mostrar
+}//end trie
+
+
+public class ArvoreT{
 	public static int comp;
 
 	public static void main(String[] args) throws Exception{	
 		long tInicial, tFinal, tTotal = 0; 
+		Jogador jogador;
 		Jogador[] player = Jogador.ler("/tmp/players.csv");
-		Arvore arvore = new Arvore();
+		Trie arvore1 = new Trie();
+		Trie arvore2 = new Trie();
+		Trie merge;
+		boolean aux;
 		comp = 0;
 		
+		/*leitura da primeira entrada*/
 		String entrada = MyIO.readString();
 		while(!entrada.equals("FIM")){
-			arvore.inserir(player[Integer.parseInt(entrada)]);
+			jogador = player[Integer.parseInt(entrada)];
+			MyIO.println(jogador.getId() + "\t" + jogador.getNome());
+			arvore1.inserir(jogador.getNome());
 			entrada = MyIO.readString();
 		}//end while
 
+		/*leitura da segunda  entrada*/
+		entrada = MyIO.readString();
+		while(!entrada.equals("FIM")){
+			jogador = player[Integer.parseInt(entrada)];
+			MyIO.println(jogador.getId() + "\t" + jogador.getNome());
+			arvore2.inserir(jogador.getNome());	
+			entrada = MyIO.readString();
+		}//end while
+
+		/*realização do merge*/
+		merge = arvore1.merge(arvore2);
+
+		/*leitura da terceira entrada*/
 		entrada = MyIO.readLine();
 		while(!entrada.equals("FIM")){
-			MyIO.print(entrada);
+			//calculo de tempo de pesquisa
 			tInicial = System.currentTimeMillis();
-			MyIO.println(arvore.pesquisar(entrada));
+				aux = merge.pesquisar(entrada);
 			tFinal = System.currentTimeMillis();
 			tTotal += tFinal - tInicial;
+
+			MyIO.print(entrada);	
+			if(aux)
+				MyIO.println(" SIM");	
+			else
+				MyIO.println(" NAO");	
 			entrada = MyIO.readLine();
 		}//end while
 
-		Arq.openWrite("710678_arvoreBinaria.txt");
-
+		//gravação do arquivo de log
+		Arq.openWrite("710678_arvoreTrie.txt");
 		Arq.print("710678\t" + tTotal + "\t" + comp);
-
 		Arq.close();
 	}//end main
 }//end classe

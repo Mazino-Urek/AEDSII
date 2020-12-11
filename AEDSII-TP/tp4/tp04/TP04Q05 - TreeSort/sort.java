@@ -277,63 +277,45 @@ class Arvore{
 	 * @param Jogador jogador - elemento a ser inserido
 	 * */
 	No inserir (Jogador jogador , No i) throws Exception{
-	
+		sort.comp++;
 		if(i == null)
 			i = new No(jogador);
-		else if(jogador.getNome().compareTo(i.elemento.getNome()) > 0)
-			i.esq = inserir(jogador, i.esq);		
-		else if(jogador.getNome().compareTo(i.elemento.getNome()) < 0)
-			i.dir = inserir(jogador, i.dir);		
-		else
-			throw new Exception("Erro --");
+		else{ 
+			sort.comp++;
+			if(jogador.getNome().compareTo(i.elemento.getNome()) < 0)
+				i.esq = inserir(jogador, i.esq);		
+			else{ 
+				sort.comp++;
+				if(jogador.getNome().compareTo(i.elemento.getNome()) > 0)
+					i.dir = inserir(jogador, i.dir);		
+				else
+					throw new Exception("Erro --");
+			}//end else
+		}//end else
 		return i;
 	}//end inserir
 
 	/*
-	 * realiza uma busca na arvore pelo atributo nome do jagador
-	 * @param String nome - nome a ser procurado
-	 * @return String - SIM caso o elemento exista na arvore, NAO caso contrario
+	 * mostra todos os nomes dos jogadores presentes na arvore de forma ordenada
 	 * */
-	String pesquisar (String nome){
-		MyIO.print(" raiz");
-		return pesquisar(nome, raiz);
-	}//end pesquisar
+	public void sort (){
+		sort(raiz);
+	}//end sort
 
 	/*
-	 * realiza uma busca na arvore pelo atributo nome do jagador
-	 * @param String nome - nome a ser procurado
-	 * @return String - SIM caso o elemento exista na arvore, NAO caso contrario
+	 * mostra todos os nomes dos jogadores presentes na arvore de forma ordenada
+	 * @param No i - raiz da arvore
 	 * */
-	String pesquisar (String nome, No i){
-		String resp;
-		biArvore.comp++;
-
-		if(i == null){
-			resp = " NAO";
+	public void sort (No i){
+		if(i != null){	
+			sort(i.esq);
+			MyIO.println(i.elemento.getNome());
+			sort(i.dir);
 		}
-		else{
-			biArvore.comp++;
-		       	if(nome.equals(i.elemento.getNome())){
-				resp = " SIM";
-			}
-			else{
-				biArvore.comp++;
-			       	if(nome.compareTo(i.elemento.getNome()) > 0){
-					MyIO.print(" dir");
-					resp = pesquisar(nome, i.esq);
-				}
-				else{
-					MyIO.print(" esq");
-					resp = pesquisar(nome, i.dir);
-				}//end else
-			}//end else
-		}//end else
-		return resp;
-	}//end pesquisar
+	}//end sort
 }//end Arvore
 
-public class biArvore{
-
+public class sort{
 	public static int comp;
 
 	public static void main(String[] args) throws Exception{	
@@ -344,24 +326,20 @@ public class biArvore{
 		
 		String entrada = MyIO.readString();
 		while(!entrada.equals("FIM")){
-			arvore.inserir(player[Integer.parseInt(entrada)]);
+			//calculo de tempo de incerção
+			tInicial = System.currentTimeMillis();
+				arvore.inserir(player[Integer.parseInt(entrada)]);
+			tFinal = System.currentTimeMillis();
+			tTotal += tFinal - tInicial;
+			
 			entrada = MyIO.readString();
 		}//end while
 
-		entrada = MyIO.readLine();
-		while(!entrada.equals("FIM")){
-			MyIO.print(entrada);
-			tInicial = System.currentTimeMillis();
-			MyIO.println(arvore.pesquisar(entrada));
-			tFinal = System.currentTimeMillis();
-			tTotal += tFinal - tInicial;
-			entrada = MyIO.readLine();
-		}//end while
+		arvore.sort();
 
-		Arq.openWrite("710678_arvoreBinaria.txt");
-
+		//gravação do arquivo de log
+		Arq.openWrite("710678_treesort.txt");
 		Arq.print("710678\t" + tTotal + "\t" + comp);
-
 		Arq.close();
 	}//end main
 }//end classe

@@ -241,19 +241,29 @@ class Jogador {
 }//end Jogador
 
 class No {
-
 	public Jogador elemento;
 	public No esq;
 	public No dir;
+	public int nivel;
 
-	No (Jogador elemento) {
-		this(elemento, null, null);
-	}
-	No (Jogador elemento, No esq, No dir) {
+	public No (Jogador elemento) {
+		this(elemento, null, null, 1);
+	}//end construtor
+	
+	public No (Jogador elemento, No esq, No dir, int nivel) {
 		this.elemento = elemento;
 		this.esq = esq;
 		this.dir = dir;
-	}
+		this.nivel = nivel;
+	}//end construtor
+
+	public void setnivel(){
+		this.nivel = 1 + Math.max(getNivel(esq), getNivel(dir));
+	}//end setnivel
+
+	public int getNivel(No no){
+		return (no == null)? 0 : no.nivel;
+	}//end getNivel
 }//end CelulaDup
 
 class Arvore{

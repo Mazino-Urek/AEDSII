@@ -256,33 +256,122 @@ class No {
 	}
 }//end CelulaDup
 
-class Arvore{
+class No2 {
 
-	private No raiz;
+	public int elemento;
+	public No2 esq;
+	public No2 dir;
+	public No outro;
+
+	No2 (int elemento) {
+		this(elemento, null, null, null);
+	}
+	No2 (int elemento, No2 esq, No2 dir, No outro) {
+		this.elemento = elemento;
+		this.esq = esq;
+		this.dir = dir;
+		this.outro = outro;
+	}
+}//end CelulaDup
+
+class Arvore{
+	private No2 raiz;
 	
-	Arvore () {
+	Arvore ()  throws Exception{
 		this.raiz = null;
+		inserir(7);
+		inserir(3);
+		inserir(11);
+		inserir(1);
+		inserir(5);
+		inserir(9);
+		inserir(12);
+		inserir(0);
+		inserir(2);
+		inserir(4);
+		inserir(6);
+		inserir(8);
+		inserir(10);
+		inserir(13);
+		inserir(14);
 	}//end construtor
 
 	/*
-	 * insere um elemento na arvore
-	 * @param Jogador jogador - elemento a ser inserido
+	 * insere um elemento na arvore primaria
+	 * @param int valor- elemento a ser inserido
 	 * */
-	void inserir (Jogador jogador) throws Exception{
-		raiz = inserir(jogador, raiz);
+	private void inserir (int valor) throws Exception{
+		raiz = inserir(valor, raiz);
 	}//end inserir
 
 	/*
-	 * insere um elemento na arvore
+	 * insere um elemento na arvore primaria
+	 * @param int valor - elemento a ser inserido
+	 * @return No2 i - raiz
+	 * */
+	private No2 inserir (int valor , No2 i) throws Exception{
+	
+		if(i == null)
+			i = new No2(valor);
+		else if(valor < i.elemento)
+			i.esq = inserir(valor, i.esq);		
+		else if(valor > i.elemento)
+			i.dir = inserir(valor, i.dir);		
+		else
+			throw new Exception("Erro --");
+		return i;
+	}//end inserir
+
+	/*
+	 * realiza uma busca na arvore primaria
+	 * @param int valor - valor procurado
+	 * @return No2 resp - No2 procurado
+	 * */
+	private No2 pesquisar (int valor, No2 i){
+		No2 resp;
+
+		if(i == null){
+			resp = null;
+		}
+		else{
+		       	if(valor == i.elemento){
+				resp = i;
+			}
+			else{
+			       	if(valor < i.elemento){
+					resp = pesquisar(valor, i.esq);
+				}
+				else{
+					resp = pesquisar(valor, i.dir);
+				}//end else
+			}//end else
+		}//end else
+		return resp;
+	}//end pesquisar
+	
+/*----------------------------------------------------*/
+	
+	/*
+	 * insere um elemento na arvore secundaria
 	 * @param Jogador jogador - elemento a ser inserido
+	 * */
+	void inserir (Jogador jogador) throws Exception{
+		No2 tmp = pesquisar((jogador.getAltura() % 15), raiz); 
+		tmp.outro = inserir(jogador, tmp.outro);
+	}//end inserir
+
+	/*
+	 * insere um elemento na arvore secundaria
+	 * @param Jogador jogador - elemento a ser inserido
+	 * @return No resp - No raiz da arvore secondaria
 	 * */
 	No inserir (Jogador jogador , No i) throws Exception{
 	
 		if(i == null)
 			i = new No(jogador);
-		else if(jogador.getNome().compareTo(i.elemento.getNome()) > 0)
-			i.esq = inserir(jogador, i.esq);		
 		else if(jogador.getNome().compareTo(i.elemento.getNome()) < 0)
+			i.esq = inserir(jogador, i.esq);		
+		else if(jogador.getNome().compareTo(i.elemento.getNome()) > 0)
 			i.dir = inserir(jogador, i.dir);		
 		else
 			throw new Exception("Erro --");
@@ -292,38 +381,77 @@ class Arvore{
 	/*
 	 * realiza uma busca na arvore pelo atributo nome do jagador
 	 * @param String nome - nome a ser procurado
-	 * @return String - SIM caso o elemento exista na arvore, NAO caso contrario
+	 * @return String resp - " SIM" caso o elemento exista na arvore, " NAO" caso contrario
 	 * */
 	String pesquisar (String nome){
+		String resp;
 		MyIO.print(" raiz");
-		return pesquisar(nome, raiz);
+		ArvoreArvore.comp++;
+		if(pesquisar(nome, raiz))
+			resp = " SIM";
+		else 
+			resp = " NAO";
+		return resp;
 	}//end pesquisar
 
-	/*
-	 * realiza uma busca na arvore pelo atributo nome do jagador
-	 * @param String nome - nome a ser procurado
-	 * @return String - SIM caso o elemento exista na arvore, NAO caso contrario
-	 * */
-	String pesquisar (String nome, No i){
-		String resp;
-		biArvore.comp++;
 
-		if(i == null){
-			resp = " NAO";
-		}
+	/*
+	 * realiza uma pesquisa por força bruta na arvore na arvore secundaria 
+	 * (utilazada para caminha na arvore primarira)
+	 * @param String nome - nome a ser procurado na arvore secundaria
+	 * @param No2 i - No2 a ser realizado a pesquisa
+	 * @return boolean resp - true caso a elemento exista na arvore secundaria
+	 * */
+	boolean pesquisar(String nome, No2 i){
+		boolean resp;
+
+		ArvoreArvore.comp++;
+		if(i == null)
+			resp = false;
 		else{
-			biArvore.comp++;
-		       	if(nome.equals(i.elemento.getNome())){
-				resp = " SIM";
+			ArvoreArvore.comp++;
+			if(pesquisar(nome, i.outro)){
+				resp = true;
 			}
 			else{
-				biArvore.comp++;
-			       	if(nome.compareTo(i.elemento.getNome()) > 0){
-					MyIO.print(" dir");
-					resp = pesquisar(nome, i.esq);
+				ArvoreArvore.comp++;
+				MyIO.print(" esq");
+				if(pesquisar(nome, i.esq)){
+					resp = true;
 				}
 				else{
-					MyIO.print(" esq");
+					MyIO.print(" dir");
+					resp = pesquisar(nome, i.dir);
+				}//else
+			}//else
+		}//end else
+		return resp;
+	}//end pesuisar
+
+	/*
+	 * realiza uma busca por força bruta na arvore secundaria pelo atributo nome do jagador
+	 * @param String nome - nome a ser procurado
+	 * @return boolean resp - true caso o elemento exista na arvore, false caso contrario
+	 * */
+	boolean pesquisar (String nome, No i){
+		boolean resp;
+
+		ArvoreArvore.comp++;
+		if(i == null){
+			resp = false;
+		}
+		else{
+			ArvoreArvore.comp++;
+		       	if(nome.equals(i.elemento.getNome())){
+				resp = true;
+			}
+			else{
+				ArvoreArvore.comp++;
+				MyIO.print(" ESQ");
+				if(pesquisar(nome, i.esq))
+						resp = true;	
+				else{
+					MyIO.print(" DIR");
 					resp = pesquisar(nome, i.dir);
 				}//end else
 			}//end else
@@ -332,7 +460,7 @@ class Arvore{
 	}//end pesquisar
 }//end Arvore
 
-public class biArvore{
+public class ArvoreArvore{
 
 	public static int comp;
 
@@ -358,7 +486,7 @@ public class biArvore{
 			entrada = MyIO.readLine();
 		}//end while
 
-		Arq.openWrite("710678_arvoreBinaria.txt");
+		Arq.openWrite("710678_arvoreArvore.txt");
 
 		Arq.print("710678\t" + tTotal + "\t" + comp);
 
